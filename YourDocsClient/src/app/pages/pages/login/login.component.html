@@ -1,0 +1,35 @@
+<div class="login-container">
+  <div class="login-background">
+    <div class="login-logo">
+      <img src=".\assets\images\leaficon.png" width="50px" height="50px">
+    </div>
+    <form #loginForm="ngForm" (ngSubmit)="loginForm.form.valid && checkLoginDetails()">
+      <div class="login-fields">
+        <label for="EmailId">Email</label>
+        <!-- <div *ngIf="(emailId.errors && loginForm.submitted) || (emailId.errors && emailId.dirty || emailId.touched)"
+          class="input-error">
+          Please enter email
+        </div> -->
+        <input [disabled]="loadingLogin" #emailId="ngModel" type="email" placeholder="Email Address" [(ngModel)]="loginDetails.EmailId"
+          name="EmailId" required />
+      </div>
+      <div class="login-fields">
+        <label for="Password">Password</label>
+        <!-- <div *ngIf="(password.errors && loginForm.submitted) || (password.errors && password.dirty || password.touched)"
+          class="input-error">
+          Please enter password
+        </div> -->
+        <input [disabled]="loadingLogin" #password="ngModel" type="password" placeholder="Password" [(ngModel)]="loginDetails.Password" name="Password" required />
+      </div>
+      <div class="login-button-container">
+        <button [disabled]="loadingLogin" type="submit" class="btn btn-primary">Login</button>
+      </div>
+    </form>
+    <div class="login-progress-container">
+      <mat-progress-bar *ngIf="loadingLogin" mode="indeterminate" color="accent"></mat-progress-bar>
+
+    </div>
+    <!--
+  <mat-progress-bar  mode="determinate" [value]="loginLoadingValue"></mat-progress-bar> -->
+  </div>
+</div>
