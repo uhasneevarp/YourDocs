@@ -92,3 +92,6 @@ body {
   cursor: pointer;
   color: yellow !important;
 }
+label{
+  display: block !important;
+}

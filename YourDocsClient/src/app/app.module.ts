@@ -16,9 +16,11 @@ import { FormsModule, ReactiveFormsModule  } from "@angular/forms";
 import { PagesModule } from './pages/pages/pages.module';
 import { SharedModule } from './@shared/shared/shared.module';
 import { ThemeModule } from './@theme/theme/theme.module';
+import { InvitationFormComponent } from './pages/invitation-form/invitation-form.component';
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    InvitationFormComponent
   ],
   imports: [
     BrowserModule,
